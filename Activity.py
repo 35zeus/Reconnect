@@ -1,20 +1,27 @@
 from PySide6.QtGui import QIcon, QPixmap
+from PySide6.QtCore import QSize
 from PySide6.QtWidgets import (
-    QMainWindow,
     QPushButton,
     QLabel,
     )
+
+from main_window import MainWindow
 
 WINDOW_HEIGHT = 693
 WINDOW_WIDTH = 320
 LABEL_HEIGHT = 40
 LABEL_WIDTH = 119
 
-class MainWindow(QMainWindow):
+
+
+class ActivityScreen(MainWindow):
     def __init__(self):
         super().__init__()
-        self.setGeometry(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT)
-        self.setStyleSheet("background-color:#FFFFFF")
+
+        activity_screen = QLabel(self)
+        activity_screen.resize(320,585)
+        activity_screen.setPixmap(QPixmap("./Resources/middle content.jpg"))
+        self.setCentralWidget(activity_screen)
 
     def footer(self):
         #creates buttons
@@ -33,13 +40,3 @@ class MainWindow(QMainWindow):
         home_button.move(10, WINDOW_HEIGHT - 34)
         stat_button.move(int(WINDOW_WIDTH/2) - 12, WINDOW_HEIGHT - 34)
         profile_button.move(WINDOW_WIDTH - 34, WINDOW_HEIGHT-34)
-
-
-
-
-
-
-
-
-
-

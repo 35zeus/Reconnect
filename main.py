@@ -5,6 +5,7 @@ from profile_page import ProfilePage
 from splash_page import SplashPage
 from onboarding_1 import Onboarding1
 from exercise_widget import Exercise
+from Activity import ActivityScreen
 import sys
 
 app = QApplication(sys.argv)
@@ -16,9 +17,11 @@ app = QApplication(sys.argv)
 # profile.show()
 # splash = SplashPage()
 # splash.show()
-onboard_1 = Onboarding1()
-onboard_1.show()
-# exercise = Exercise()
-# exercise.show()
+# onboard_1 = Onboarding1()
+# onboard_1.show()
+#exercise = Exercise()
+#exercise.show()
+activity_screen = ActivityScreen()
+activity_screen.show()
 app.exec()
 
